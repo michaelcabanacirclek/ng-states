@@ -1,11 +1,10 @@
 import { Component, computed, inject, OnInit, signal } from "@angular/core";
-import { UserHttpClientService } from "./user-http-client.service";
-import { TableComponent } from "../shared/components/table.component";
-import { User, UserQuery } from "./user.models";
-import { PaginationComponent } from "../shared/components/pagination.component";
+import { UserHttpClientService } from "../user-http-client.service";
+import { TableComponent } from "../../shared/components/table.component";
+import { User, UserQuery } from "../user.models";
+import { PaginationComponent } from "../../shared/components/pagination.component";
 import { toObservable, toSignal } from "@angular/core/rxjs-interop";
 import { switchMap } from "rxjs";
-import { DOCUMENT } from "@angular/common";
 
 @Component({
   selector: "app-user-page",
@@ -72,11 +71,9 @@ export class UserPageComponent {
   pageSizeChanged(event: number) {
     this.size.set(event);
     this.page.set(0);
-
   }
 
   pageChanged(event: number) {
     this.page.set(event);
   }
-  
 }
